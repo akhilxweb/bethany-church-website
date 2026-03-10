@@ -1,0 +1,229 @@
+// State management
+let currentPath = window.location.hash.slice(1) || '/';
+
+// Layout elements
+const headerTemplate = `
+    <div class="container nav-container">
+        <a href="#/" class="logo">
+            <img src="assets/logo.png" alt="Church logo" id="nav-logo">
+            <span>Bethany Prayer House</span>
+        </a>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#/" class="nav-link" data-path="/">Home</a>
+            <a href="#/#about" class="nav-link" data-path="/#about" onclick="setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}), 100)">About</a>
+            <a href="#/#leadership" class="nav-link" data-path="/#leadership" onclick="setTimeout(()=>document.getElementById('leadership').scrollIntoView({behavior:'smooth'}), 100)">Leadership</a>
+            <a href="#/#services" class="nav-link" data-path="/#services" onclick="setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}), 100)">Services</a>
+            <a href="#/#gallery" class="nav-link" data-path="/#gallery" onclick="setTimeout(()=>document.getElementById('gallery').scrollIntoView({behavior:'smooth'}), 100)">Gallery</a>
+            <a href="#/live" class="nav-link" data-path="/live">Live Service</a>
+            <a href="#/prayer" class="nav-link" data-path="/prayer">Prayer Request</a>
+            <a href="#/contact" class="nav-link btn btn-primary fade-in delay-2" style="padding: 0.5rem 1.5rem; min-width: auto; height: 40px;" data-path="/contact">Contact</a>
+        </nav>
+    </div>
+`;
+
+const footerTemplate = `
+    <div class="container fade-in">
+
+        <!-- Footer Bible Verse -->
+        <div class="footer-verse">
+            <blockquote>&ldquo;The Lord bless you and keep you; the Lord make his face shine upon you.&rdquo;</blockquote>
+            <cite>&mdash; Numbers 6:24-26</cite>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: var(--accent-gold); margin-bottom: 1.5rem;">
+                    <span>Bethany Prayer House</span>
+                </div>
+                <p>Narasaraopet, Andhra Pradesh 522601</p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@bethanychurchnarasaraopet5648" target="_blank" class="social-link" aria-label="YouTube">
+                        <i data-lucide="youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bethanyprayerhousenarasaraopet" target="_blank" class="social-link" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#/">Home</a>
+                    <a href="#/#about" onclick="setTimeout(()=>document.getElementById('about')?.scrollIntoView({behavior:'smooth'}), 100)">About</a>
+                    <a href="#/#leadership" onclick="setTimeout(()=>document.getElementById('leadership')?.scrollIntoView({behavior:'smooth'}), 100)">Leadership</a>
+                    <a href="#/#services" onclick="setTimeout(()=>document.getElementById('services')?.scrollIntoView({behavior:'smooth'}), 100)">Services</a>
+                    <a href="#/#gallery" onclick="setTimeout(()=>document.getElementById('gallery')?.scrollIntoView({behavior:'smooth'}), 100)">Gallery</a>
+                    <a href="#/live">Live Service</a>
+                    <a href="#/prayer">Prayer Request</a>
+                    <a href="#/contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i data-lucide="map-pin" style="display:inline; width:16px; margin-right:8px"></i> <a href="https://maps.google.com/?q=Gangamma+Temple+Lane,+Shalem+Nagar,+Narasaraopet,+Andhra+Pradesh+522601" target="_blank" rel="noopener noreferrer" style="color: inherit;">Gangamma Temple Lane, Shalem Nagar, Narasaraopet</a></p>
+                <p><i data-lucide="phone" style="display:inline; width:16px; margin-right:8px"></i> <a href="tel:08647232439" style="color: inherit;">08647 232439</a></p>
+                <p><i data-lucide="mail" style="display:inline; width:16px; margin-right:8px"></i> <a href="mailto:bethanychurch01@gmail.com" style="color: inherit;">bethanychurch01@gmail.com</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; ${new Date().getFullYear()} Bethany Prayer House. All rights reserved.</p>
+        </div>
+    </div>
+`;
+
+// Router implementation
+function router() {
+    let hash = window.location.hash.slice(1) || '/';
+
+    // If navigating to a section on the home page (e.g., #/#about), the page is just '/'
+    if (hash.startsWith('/#') || hash === '') {
+        currentPath = '/';
+    } else {
+        currentPath = hash;
+    }
+
+    const page = pages[currentPath] || pages['/404'];
+
+    if (page) {
+        document.getElementById('app').innerHTML = page();
+        lucide.createIcons();
+        updateActiveNavLink();
+
+        // Only scroll to top if not targeting a specific section
+        if (!hash.startsWith('/#')) {
+            window.scrollTo(0, 0);
+        }
+    }
+
+    const navLinks = document.getElementById('navLinks');
+    if (navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+        const icon = document.querySelector('#mobileMenuBtn i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+    }
+
+    // Small delay to ensure DOM is ready before observing
+    setTimeout(() => {
+        initAnimations();
+        initForms();
+        if (currentPath === '/') {
+            initGallery();
+        }
+    }, 50);
+}
+
+function initForms() {
+    const prayerForm = document.getElementById('prayerForm');
+    const contactForm = document.getElementById('contactForm');
+    const whatsappNumber = '919154139236';
+
+    if (prayerForm) {
+        prayerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(prayerForm);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+
+            const whatsappMessage = `*New Prayer Request from Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+            prayerForm.reset();
+        });
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            const whatsappMessage = `*New Contact Message from Website*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Message:* ${message}`;
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+            contactForm.reset();
+        });
+    }
+}
+
+function updateActiveNavLink() {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-path') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+}
+
+function initAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
+function initGallery() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    if (!lightbox || galleryItems.length === 0) return;
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.querySelector('img').src;
+            if (imgSrc) {
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('show');
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', () => lightbox.classList.remove('show'));
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.classList.remove('show');
+    });
+}
+
+// Initialize application
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('header').innerHTML = headerTemplate;
+    document.getElementById('footer').innerHTML = footerTemplate;
+
+    // User image configuration path
+    // If you placed the real user images in the same folder, rename the references here or directly in the html/js.
+    // E.g., const userLogo = 'logo.png'; document.getElementById('nav-logo').src = userLogo;
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('show')) {
+            icon.setAttribute('data-lucide', 'x');
+        } else {
+            icon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+    });
+
+    window.addEventListener('hashchange', router);
+    router();
+});
