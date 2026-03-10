@@ -166,15 +166,34 @@ function updateActiveNavLink() {
 }
 
 function initAnimations() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    fadeElements.forEach(el => {
+        // If element is already in viewport or nearly there, activate it immediately
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('active');
+        } else {
+            observer.observe(el);
+        }
+    });
+
+    // Final fallback: ensure everything is visible after a short delay
+    // This prevents "blank page" syndrome if IntersectionObserver fails
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in:not(.active)').forEach(el => {
+            el.classList.add('active');
+        });
+    }, 500);
 }
 
 function initGallery() {
