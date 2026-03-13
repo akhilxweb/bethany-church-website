@@ -1,10 +1,11 @@
 // State management
 let currentPath = window.location.hash.slice(1) || '/';
+let lastRenderedPath = null;
 
 // Layout elements
 const headerTemplate = `
     <div class="container nav-container">
-        <a href="#/" class="logo">
+        <a href="#/" class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
             <img src="assets/logo.png" alt="Church logo" id="nav-logo">
             <span>Bethany Prayer House</span>
         </a>
@@ -14,11 +15,11 @@ const headerTemplate = `
         </button>
 
         <nav class="nav-links" id="navLinks">
-            <a href="#/" class="nav-link" data-path="/">Home</a>
-            <a href="#/#about" class="nav-link" data-path="/#about" onclick="setTimeout(()=>document.getElementById('about').scrollIntoView({behavior:'smooth'}), 100)">About</a>
-            <a href="#/#leadership" class="nav-link" data-path="/#leadership" onclick="setTimeout(()=>document.getElementById('leadership').scrollIntoView({behavior:'smooth'}), 100)">Leadership</a>
-            <a href="#/#services" class="nav-link" data-path="/#services" onclick="setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}), 100)">Services</a>
-            <a href="#/#gallery" class="nav-link" data-path="/#gallery" onclick="setTimeout(()=>document.getElementById('gallery').scrollIntoView({behavior:'smooth'}), 100)">Gallery</a>
+            <a href="#/" class="nav-link" data-path="/" onclick="window.scrollTo({top:0, behavior:'smooth'})">Home</a>
+            <a href="#/#about" class="nav-link" data-path="/#about" onclick="scrollToSection('about')">About</a>
+            <a href="#/#leadership" class="nav-link" data-path="/#leadership" onclick="scrollToSection('leadership')">Leadership</a>
+            <a href="#/#services" class="nav-link" data-path="/#services" onclick="scrollToSection('services')">Services</a>
+            <a href="#/#gallery" class="nav-link" data-path="/#gallery" onclick="scrollToSection('gallery')">Gallery</a>
             <a href="#/live" class="nav-link" data-path="/live">Live Service</a>
             <a href="#/prayer" class="nav-link" data-path="/prayer">Prayer Request</a>
             <a href="#/contact" class="nav-link btn btn-primary fade-in delay-2" style="padding: 0.5rem 1.5rem; min-width: auto; height: 40px;" data-path="/contact">Contact</a>
@@ -54,11 +55,11 @@ const footerTemplate = `
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <div class="footer-links">
-                    <a href="#/">Home</a>
-                    <a href="#/#about" onclick="setTimeout(()=>document.getElementById('about')?.scrollIntoView({behavior:'smooth'}), 100)">About</a>
-                    <a href="#/#leadership" onclick="setTimeout(()=>document.getElementById('leadership')?.scrollIntoView({behavior:'smooth'}), 100)">Leadership</a>
-                    <a href="#/#services" onclick="setTimeout(()=>document.getElementById('services')?.scrollIntoView({behavior:'smooth'}), 100)">Services</a>
-                    <a href="#/#gallery" onclick="setTimeout(()=>document.getElementById('gallery')?.scrollIntoView({behavior:'smooth'}), 100)">Gallery</a>
+                    <a href="#/" onclick="window.scrollTo({top:0, behavior:'smooth'})">Home</a>
+                    <a href="#/#about" onclick="scrollToSection('about')">About</a>
+                    <a href="#/#leadership" onclick="scrollToSection('leadership')">Leadership</a>
+                    <a href="#/#services" onclick="scrollToSection('services')">Services</a>
+                    <a href="#/#gallery" onclick="scrollToSection('gallery')">Gallery</a>
                     <a href="#/live">Live Service</a>
                     <a href="#/prayer">Prayer Request</a>
                     <a href="#/contact">Contact</a>
@@ -79,6 +80,18 @@ const footerTemplate = `
     </div>
 `;
 
+window.scrollToSection = function(id) {
+    setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+            const headerOffset = 80; // height of fixed header
+            const elementPosition = el.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+    }, 50); // small delay to ensure rendering just in case we changed paths
+};
+
 // Router implementation
 function router() {
     let hash = window.location.hash.slice(1) || '/';
@@ -90,35 +103,50 @@ function router() {
         currentPath = hash;
     }
 
-    const page = pages[currentPath] || pages['/404'];
+    if (lastRenderedPath !== currentPath) {
+        const page = pages[currentPath] || pages['/404'];
 
-    if (page) {
-        document.getElementById('app').innerHTML = page();
-        lucide.createIcons();
-        updateActiveNavLink();
+        if (page) {
+            try {
+                document.getElementById('app').innerHTML = page();
+                lucide.createIcons();
+            } catch (error) {
+                console.error("Error rendering page logic: ", error);
+            }
+            lastRenderedPath = currentPath;
 
-        // Only scroll to top if not targeting a specific section
-        if (!hash.startsWith('/#')) {
-            window.scrollTo(0, 0);
+            // Small delay to ensure DOM is ready before observing
+            setTimeout(() => {
+                initAnimations();
+                initForms();
+                if (currentPath === '/') {
+                    initGallery();
+                }
+            }, 50);
         }
+    }
+
+    updateActiveNavLink();
+
+    if (hash.startsWith('/#')) {
+        const sectionId = hash.split('#')[1];
+        if (sectionId) {
+            scrollToSection(sectionId);
+        }
+    } else {
+        // Full page navigation - smoothly scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     const navLinks = document.getElementById('navLinks');
-    if (navLinks.classList.contains('show')) {
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    if (navLinks && navLinks.classList.contains('show')) {
         navLinks.classList.remove('show');
-        const icon = document.querySelector('#mobileMenuBtn i');
-        icon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
-    }
-
-    // Small delay to ensure DOM is ready before observing
-    setTimeout(() => {
-        initAnimations();
-        initForms();
-        if (currentPath === '/') {
-            initGallery();
+        if (mobileBtn) {
+            mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
+            try { lucide.createIcons(); } catch(e) {}
         }
-    }, 50);
+    }
 }
 
 function initForms() {
@@ -234,13 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileBtn.addEventListener('click', () => {
         navLinks.classList.toggle('show');
-        const icon = mobileBtn.querySelector('i');
         if (navLinks.classList.contains('show')) {
-            icon.setAttribute('data-lucide', 'x');
+            mobileBtn.innerHTML = '<i data-lucide="x"></i>';
         } else {
-            icon.setAttribute('data-lucide', 'menu');
+            mobileBtn.innerHTML = '<i data-lucide="menu"></i>';
         }
-        lucide.createIcons();
+        try { lucide.createIcons(); } catch(e) {}
     });
 
     window.addEventListener('hashchange', router);
