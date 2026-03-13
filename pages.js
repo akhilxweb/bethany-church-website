@@ -155,12 +155,6 @@ const pages = {
                         <p class="text-muted" style="font-size: 0.875rem;">Saturday</p>
                     </a>
 
-                    <div class="card fade-in delay-3" style="border: 2px dashed #cbd5e1; background-color: #f8fafc; opacity: 0.8; cursor: default; text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                        <i data-lucide="lock" class="text-muted mx-auto" style="width: 32px; height: 32px; margin-bottom: 1rem;"></i>
-                        <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-muted);">Closed</h3>
-                        <p class="text-muted" style="font-size: 0.875rem;">Monday and Friday</p>
-                    </div>
-
                 </div>
             </div>
         </section>
