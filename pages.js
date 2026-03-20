@@ -1,7 +1,7 @@
 const pages = {
     '/': () => `
         <!-- Hero Section -->
-        <section class="hero" style="background-image: url('soft_worship_background.png'); background-size: cover; background-position: center;">
+        <section class="hero" style="background-image: url('assets/yt/T1OIN1oO300.jpg'); background-size: cover; background-position: center;">
             <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(10, 25, 47, 0.7); z-index: 0;"></div>
             <div class="hero-content fade-in">
                 <h1 class="hero-title" style="font-family: var(--font-heading);">Welcome to Church at Bethany</h1>
@@ -174,50 +174,27 @@ const pages = {
                 </div>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item fade-in delay-1">
-                        <img src="assets/founder.jpg" alt="Brother N. Rajanna">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <img src="assets/pastor.jpeg" alt="Brother N. Samuel Rajanna">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <img src="assets/IMG_20260306_182521.jpg.jpeg" alt="Sister N. Swapna Samuel">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <img src="assets/gallery-1.jpeg" alt="Church Activity">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <img src="assets/gallery-2.jpeg" alt="Church Worship">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <img src="assets/gallery-3.jpeg" alt="Church Event">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <img src="assets/gallery-4.jpeg" alt="Church Community">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-2">
-                        <img src="assets/gallery-5.jpeg" alt="Church Gathering">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <img src="assets/gallery-6.jpeg" alt="Church Service">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-3">
-                        <img src="assets/gallery-9.jpeg" alt="Pastoral Service">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
-                    <div class="gallery-item fade-in delay-1">
-                        <img src="assets/gallery-10.jpeg" alt="Sunday Worship">
-                        <div class="gallery-overlay"><i data-lucide="maximize-2"></i></div>
-                    </div>
+                    <!-- Extracted Images -->
+                    <div class="gallery-item fade-in"><img src="assets/yt/4czg22vsJp0.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/4dq1FAUohbs.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/75NuDv1Nj7M.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/84Ww7TD3cm0.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/Ihq-Ffh4Tus.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/J5AU6625k6E.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/KFrNfdQMYRU.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/LKdf1cOFE7A.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/OKbq_PZdx_E.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/V4OzvHpaK60.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/WIMucVKcn-M.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/ce8BuJXwI6U.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/d5GR0k-ngfc.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/mGs_XrKAr5s.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/sjorINxYAEo.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/tvFvOoLiFUw.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/v0lg_f89-ds.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/v5jkrB_NgPU.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/vRKoGe4pR3c.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/yt/XNXCS19-iAU.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
                 </div>
             </div>
             
@@ -238,21 +215,26 @@ const pages = {
             </div>
         </div>
         <section class="section bg-gray fade-in">
-            <div class="container" style="max-width: 800px; text-align: center;">
-                <div class="card" style="padding: 4rem; box-shadow: var(--shadow-lg); border: none;">
-                    <i data-lucide="cross" class="text-gold mx-auto" style="width: 64px; height: 64px; margin-bottom: 2rem;"></i>
-                    <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-dark);">
-                        Bethany Prayer House is a Christian fellowship located in Narasaraopet, Andhra Pradesh.
-                    </p>
-                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-muted);">
-                        Our mission is to preach the Gospel of Jesus Christ, teach the Word of God faithfully, and help believers grow spiritually.
-                    </p>
-                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-muted);">
-                        Building on the legacy of our founder, Brother N. Rajanna, our church is now under the dedicated leadership of Pastor <strong>Brother N. Samuel Rajanna</strong> and Hand Maiden <strong>Sister N. Swapna Samuel</strong>. Together, they shepherd our congregation with love and devotion.
-                    </p>
-                    <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-muted);">
-                        We gather for worship, prayer, Bible study, and fellowship to build a strong Christian community centered on God's Word. <strong>Everyone is welcome.</strong>
-                    </p>
+            <div class="container" style="max-width: 1000px;">
+                <div class="grid grid-cols-2" style="gap: 2rem; align-items: center;">
+                    <div class="card" style="padding: 3rem; box-shadow: var(--shadow-lg); border: none;">
+                        <i data-lucide="cross" class="text-gold mx-auto" style="width: 64px; height: 64px; margin-bottom: 2rem; display: block;"></i>
+                        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-dark);">
+                            Bethany Prayer House is a Christian fellowship located in Narasaraopet, Andhra Pradesh.
+                        </p>
+                        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-muted);">
+                            Our mission is to preach the Gospel of Jesus Christ, teach the Word of God faithfully, and help believers grow spiritually.
+                        </p>
+                        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-muted);">
+                            Building on the legacy of our founder, Brother N. Rajanna, our church is now under the dedicated leadership of Pastor <strong>Brother N. Samuel Rajanna</strong> and Hand Maiden <strong>Sister N. Swapna Samuel</strong>. Together, they shepherd our congregation with love and devotion.
+                        </p>
+                        <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-muted);">
+                            We gather for worship, prayer, Bible study, and fellowship to build a strong Christian community centered on God's Word. <strong>Everyone is welcome.</strong>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="assets/yt/jeL_INfViQQ.jpg" alt="Ministry Overview" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/3;">
+                    </div>
                 </div>
 
                 <!-- Influence of Hebron Ministry -->
@@ -368,7 +350,7 @@ const pages = {
                 </div>
 
                 <div class="card mx-auto" style="max-width: 800px; overflow: hidden; padding: 0; box-shadow: var(--shadow-lg); border: none; border-radius: 12px; background: var(--bg-white);">
-                    <div style="position: relative; height: 350px; background-image: url('assets/live-thumbnail.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: relative; height: 350px; background-image: url('assets/yt/Ihq-Ffh4Tus.jpg'); background-size: cover; background-position: center;">
                         <a href="https://www.youtube.com/@bethanychurchnarasaraopet5648/live" target="_blank" rel="noopener noreferrer" style="position: absolute; inset: 0; background: rgba(10, 25, 47, 0.4); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='rgba(10, 25, 47, 0.2)'" onmouseout="this.style.background='rgba(10, 25, 47, 0.4)'">
                             <i data-lucide="play-circle" style="color: white; width: 80px; height: 80px; opacity: 0.9; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));"></i>
                         </a>
