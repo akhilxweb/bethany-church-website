@@ -152,7 +152,7 @@ function router() {
 function initForms() {
     const prayerForm = document.getElementById('prayerForm');
     const contactForm = document.getElementById('contactForm');
-    const whatsappNumber = '919154139236';
+    const whatsappNumber = '919985553734';
 
     if (prayerForm) {
         prayerForm.addEventListener('submit', (e) => {
