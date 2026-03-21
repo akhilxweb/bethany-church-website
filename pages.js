@@ -175,26 +175,26 @@ const pages = {
                 
                 <div class="gallery-grid">
                     <!-- Extracted Images -->
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-11.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-12.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-13.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-14.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-15.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-16.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-17.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-18.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-19.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-20.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-22.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-23.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-24.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-25.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-26.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-27.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-28.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-29.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-30.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
-                    <div class="gallery-item fade-in"><img src="assets/thumbnails/gallery-31.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-11.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-12.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-13.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-14.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-15.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-16.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-17.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-18.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-19.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-20.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-22.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-23.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-24.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-25.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-26.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-27.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-28.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-29.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-30.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/photos/gallery-31.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
                 </div>
             </div>
             
@@ -233,7 +233,7 @@ const pages = {
                         </p>
                     </div>
                     <div>
-                        <img src="assets/thumbnails/gallery-21.jpg" alt="Ministry Overview" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/3;">
+                        <img src="assets/photos/gallery-21.jpg" alt="Ministry Overview" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/3;">
                     </div>
                 </div>
 
@@ -350,7 +350,7 @@ const pages = {
                 </div>
 
                 <div class="card mx-auto" style="max-width: 800px; overflow: hidden; padding: 0; box-shadow: var(--shadow-lg); border: none; border-radius: 12px; background: var(--bg-white);">
-                    <div style="position: relative; height: 350px; background-image: url('assets/thumbnails/gallery-19.jpg'); background-size: cover; background-position: center;">
+                    <div style="position: relative; height: 350px; background-image: url('assets/photos/gallery-19.jpg'); background-size: cover; background-position: center;">
                         <a href="https://www.youtube.com/@bethanychurchnarasaraopet5648/live" target="_blank" rel="noopener noreferrer" style="position: absolute; inset: 0; background: rgba(10, 25, 47, 0.4); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.3s ease;" onmouseover="this.style.background='rgba(10, 25, 47, 0.2)'" onmouseout="this.style.background='rgba(10, 25, 47, 0.4)'">
                             <i data-lucide="play-circle" style="color: white; width: 80px; height: 80px; opacity: 0.9; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));"></i>
                         </a>
