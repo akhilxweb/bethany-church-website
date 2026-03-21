@@ -1119,17 +1119,18 @@ textarea.form-control {
     }
 
     /* 2 & 4. SPACING, LAYOUT, CONTENT WIDTH */
-    /* Target the container and card padding */
+    /* Target the container to stretch wider to the screen edges */
     #about .container,
     .page-header + section.bg-gray .container {
-        padding-left: 14px !important;
-        padding-right: 14px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        width: 100% !important;
     }
 
-    /* Reduce card padding (previously 3rem) */
+    /* Reduce card padding to give text more horizontal width */
     #about .card,
     .page-header + section.bg-gray .card {
-        padding: 1.5rem 1.25rem !important;
+        padding: 1.5rem 0.85rem !important;
     }
 
     /* Reduce vertical gaps between sections/cards */
