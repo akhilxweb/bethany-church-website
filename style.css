@@ -1093,3 +1093,64 @@ textarea.form-control {
         margin: 1.5rem 1rem 0 1rem;
     }
 }
+
+/* =========================================================
+   MOBILE RESPONSIVENESS FIXES FOR ABOUT SECTION
+   ========================================================= */
+@media (max-width: 768px) {
+    /* 1. MOBILE FONT OPTIMIZATION */
+    /* Target headings in the about section specifically */
+    #about h2, 
+    #about .card h2,
+    .page-header + section.bg-gray h2,
+    .page-header + section.bg-gray .card h2 {
+        font-size: 24px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Target paragraphs in the about section specifically */
+    #about p, 
+    #about .card p,
+    .page-header + section.bg-gray p,
+    .page-header + section.bg-gray .card p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* 2 & 4. SPACING, LAYOUT, CONTENT WIDTH */
+    /* Target the container and card padding */
+    #about .container,
+    .page-header + section.bg-gray .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    /* Reduce card padding (previously 3rem) */
+    #about .card,
+    .page-header + section.bg-gray .card {
+        padding: 1.5rem 1.25rem !important;
+    }
+
+    /* Reduce vertical gaps between sections/cards */
+    #about > .container > .card > div[style*="margin-top: 3rem;"],
+    .page-header + section.bg-gray .container > div[style*="margin-top: 3rem;"] {
+        margin-top: 1.5rem !important;
+    }
+    
+    /* 5. SCROLL IMPROVEMENT (Section Height) */
+    /* Reduce top and bottom padding of the overall section so next section is visible */
+    #about.section,
+    .page-header + section.bg-gray.section {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    /* Icon margins */
+    #about .card i[data-lucide],
+    .page-header + section.bg-gray .card i[data-lucide] {
+        margin-bottom: 1rem !important;
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
