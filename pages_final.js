@@ -69,7 +69,7 @@ const pages = {
         <section id="leadership" class="section bg-gray">
             <div class="container fade-in">
                 <div class="text-center mb-8">
-                    <h2 style="font-size: 2.5rem;">Church Leadership</h2>
+                    <h2 style="font-size: 2.5rem;">God Servants</h2>
                     <p class="text-muted" style="font-size: 1.125rem;">Dedicated servants guiding our congregation in faith</p>
                 </div>
 
