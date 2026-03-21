@@ -174,6 +174,30 @@ const pages = {
                 </div>
                 
                 <div class="gallery-grid">
+                    <!-- Original Images -->
+                    <div class="gallery-item fade-in"><img src="assets/gallery-1.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-2.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-3.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-4.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-5.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-6.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-9.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/gallery-10.jpeg" alt="Church Service"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-02-28 at 6.42.34 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.02 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.02 PM (1).jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.03 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.03 PM (1).jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.03 PM (2).jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.31.04 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.37.30 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.37.39 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.37.48 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.37.58 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.38.06 PM.jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+                    <div class="gallery-item fade-in"><img src="assets/WhatsApp Image 2026-03-05 at 11.38.06 PM (1).jpeg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
+
                     <!-- Extracted Images -->
                     <div class="gallery-item fade-in"><img src="assets/photos/gallery-11.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
                     <div class="gallery-item fade-in"><img src="assets/photos/gallery-12.jpg" alt="Worship"><div class="gallery-overlay"><i data-lucide="maximize-2"></i></div></div>
